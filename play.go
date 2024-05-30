@@ -15,9 +15,9 @@ func NoError(err error) {
 }
 
 // Debug は渡された値をまとめて詳細にログ出力します
-// en: Debug logs the passed values in detail.
 //
-//	If you pass arguments using play.KV(), it will map and output the names appropriately.
+// en: Debug logs the passed values in detail.
+// If you pass arguments using play.KV(), it will map and output the names appropriately.
 func Debug(values ...any) {
 	builder := strings.Builder{}
 	builder.WriteString("============= Debug =============\n")
@@ -40,8 +40,9 @@ type KeyValue struct {
 }
 
 // KV は Debug に渡す KeyValue を生成します。reflectやruntimeを使っても関数呼び出し元での変数名等は取得できないので、この設計になっています。
+//
 // en: KV generates a KeyValue to pass to Debug. This design is used because it is not possible to get the variable name
-//     at the call site using the reflect or runtime packages.
+// at the call site using the reflect or runtime packages.
 func KV(key string, value any) KeyValue {
 	return KeyValue{Key: key, Value: value}
 }
