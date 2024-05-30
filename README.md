@@ -24,7 +24,7 @@ func main() {
 	play.Debug( // also you can print them in key-value pairs
 		play.KV("foo", foo),
 		play.KV("bar", bar),
-        play.KV("baz", baz),
+		play.KV("baz", baz),
 	)
 }
 
