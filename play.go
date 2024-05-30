@@ -20,7 +20,7 @@ func NoError(err error) {
 //	If you pass arguments using play.KV(), it will map and output the names appropriately.
 func Debug(values ...any) {
 	builder := strings.Builder{}
-	builder.WriteString("============ Debug ============\n")
+	builder.WriteString("============= Debug =============\n")
 	for index, value := range values {
 		if kv, ok := value.(KeyValue); ok {
 			builder.WriteString(fmt.Sprintf("    %s => %#v\n", kv.Key, kv.Value))
@@ -28,7 +28,7 @@ func Debug(values ...any) {
 		}
 		builder.WriteString(fmt.Sprintf("    %2d => %#v\n", index, value))
 	}
-	builder.WriteString("================================\n")
+	builder.WriteString("=====================================================\n")
 	log.Print(builder.String())
 }
 
